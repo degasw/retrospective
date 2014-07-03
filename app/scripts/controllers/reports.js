@@ -1,5 +1,5 @@
 angular.module('retrospectiveApp')
-  .controller('ReportsCtrl', function ($scope, $http) {
+  .controller('ReportsCtrl', function ($scope, $http, $location) {
 
     $scope.init = function(){
       $http.get('/api/reports/ranking').success(function(data){
@@ -7,6 +7,10 @@ angular.module('retrospectiveApp')
       }).error(function(err){
         console.log(err);
       });
+    };
+
+    $scope.cancel = function(){
+       $location.url('/');
     };
 
     $scope.init();

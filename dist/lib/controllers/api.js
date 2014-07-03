@@ -46,7 +46,7 @@ exports.createIssue = function ( req, res ){
 
 exports.vote = function ( req, res ){
   _.forEach(req.body.issues, function(issue){
-    if (issue.vote !== undefined) {
+    if (issue.vote.importance > 0) {
       new Vote({
         issue: issue.description,
         category: issue.category,
