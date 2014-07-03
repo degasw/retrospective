@@ -27,7 +27,7 @@ module.exports = function(app) {
   });
 
   app.configure('production', function(){
-    app.use(express.favicon(path.join(__dirname, 'public', 'favicon.ico')));
+    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
     app.use(express.static(path.join(config.root, 'public')));
     app.set('views', config.root + '/views');
   });
