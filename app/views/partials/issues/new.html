@@ -1,18 +1,26 @@
-<div class="page-header">
-  <h3>Create <small>Issue</small></h3>
+<div class="row">
+    <div class="col-md-8">
+        <div class="page-header">
+            <h3>Create
+                <small>Issue</small>
+            </h3>
+        </div>
+        <form ng-controller="IssuesCtrl">
+            <div>
+                <span>Description</span>
+                <textarea class="form-control" type="text" name="description" id="description"
+                          ng-model="issue.description"
+                          rows="3"></textarea>
+            </div>
+            <div>
+                <span>Category</span>
+                <input class="form-control" type="text" name="category" id="category" ng-model="issue.category"/>
+            </div>
+            <hr>
+            <div>
+                <button type="submit" class="btn btn-primary" ng-click="create()">Save</button>
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
 </div>
-<form  ng-controller="IssuesCtrl">
-    <div>
-    <span>Description</span>
-    <textarea class="form-control" type="text" name="description" id="description" ng-model="issue.description" rows="3"></textarea>
-    </div>
-    <div>
-        <span>Category</span>
-        <input class="form-control" type="text" name="category" id="category" ng-model="issue.category"/>
-    </div>
-    <hr>
-    <div>
-        <button type="submit" class="btn btn-primary" ng-click="create()">Save</button>
-        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
-    </div>
-</form>

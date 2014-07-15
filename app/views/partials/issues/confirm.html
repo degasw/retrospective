@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-8">
+        <div ng-controller="VotesCtrl">
+            <div class="page-header">
+                <h1>Confirm Votes</h1>
+            </div>
+
+            <table class="table table-bordered">
+                <thead>
+                <th class="active">Description</th>
+                <th class="active">Category</th>
+                <th class="active">Importance</th>
+                </thead>
+                <tbody ng-repeat="issue in voteList">
+                <tr>
+                    <td>{{issue.description}}</td>
+                    <td>{{issue.category}}</td>
+                    <td>{{issue.importance}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <div class="btn-group" ng-hide="voteSaved">
+            <button type="button" class="btn btn-primary" ng-click="saveVotes()">Confirm</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+        <div class="alert alert-info" role="alert" ng-show="voteSaved">
+            <span>Your vote has been successfully saved</span>
+            <span class="pull-right"><a href="/">Home</a></span>
+        </div>
+    </div>
+</div>
