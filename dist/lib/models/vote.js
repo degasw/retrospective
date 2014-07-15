@@ -7,7 +7,6 @@ var mongoose = require('mongoose'),
 var VoteSchema = new Schema({
   issue: String,
   category: String,
-  comment: String,
   importance: Number,
   date_created: Date
 });

@@ -33,7 +33,8 @@ exports.issues = function( req, res ){
 exports.createIssue = function ( req, res ){
   new Issue({
     description: req.body.issue.description,
-    category: req.body.issue.category
+    category: req.body.issue.category,
+    comments: []
   }).save(function(err,data){
     if(err){
       res.json(err);
@@ -44,14 +45,27 @@ exports.createIssue = function ( req, res ){
   });
 };
 
+exports.updateIssue = function ( req, res ){
+    Issue.update({_id: req.body.issue._id},
+        {$set: {comments: req.body.issue.comments}},
+        function(err,data){
+            if(err){
+                res.json(err);
+            }
+            else{
+                res.json(data);
+            }
+        });
+};
+
 exports.vote = function ( req, res ){
+ console.log(req.body.issues);
   _.forEach(req.body.issues, function(issue){
-    if (issue.vote.importance > 0) {
+    if (issue.importance > 0) {
       new Vote({
         issue: issue.description,
         category: issue.category,
-        comment: issue.vote.comment,
-        importance: issue.vote.importance,
+        importance: issue.importance,
         date_created: Date.now()
       }).save(function(err,data){
         if(err){
@@ -71,8 +85,7 @@ exports.rankedVotes = function( req, res ){
       _.forEach(uniqueList,function(item){
           var vs = new VoteSummary({
            issue: item.issue,
-           category: item.category,
-           comment: item.comment
+           category: item.category
           });
 
           var items = _.where(votes,{issue: item.issue});
