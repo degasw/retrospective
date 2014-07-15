@@ -12,7 +12,7 @@
                 <th class="active">Category</th>
                 <th class="active">Average Importance</th>
                 <th class="active">Total Votes</th>
-                <th class="active">Actions</th>
+                <!--<th class="active">Actions</th>-->
                 </thead>
                 <tbody ng-repeat="vote in votes | orderBy:'averageImportance':true">
                 <tr>
@@ -20,7 +20,7 @@
                     <td>{{vote.category}}</td>
                     <td>{{vote.averageImportance}}</td>
                     <td>{{vote.numberOfVotes}}</td>
-                    <td><button type="button" ng-click="viewProposals(vote)" class="btn btn-default ">proposals</button></td>
+                    <!--<td><button type="button" ng-click="viewProposals(vote)" class="btn btn-default ">proposals</button></td>-->
                 </tr>
                 </tbody>
             </table>

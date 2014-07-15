@@ -18,8 +18,6 @@ angular.module('retrospectiveApp')
             });
         };
 
-
-
         $scope.cancel = function (){
             $location.url('/issues/list');
         };

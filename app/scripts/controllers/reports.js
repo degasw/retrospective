@@ -9,8 +9,8 @@ angular.module('retrospectiveApp')
             });
         };
 
-        $scope.viewProposals = function () {
-            IssueService.set(issue);
+        $scope.viewProposals = function (vote) {
+            IssueService.set(vote);
             $location.url('/issues/comments');
         };
 

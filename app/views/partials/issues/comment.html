@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-md-8" ng-controller="CommentsCtrl">
         <div class="page-header">
-            <h1>Comments for
-                <small>{{issue.name}}</small>
+            <h1>Proposals for
+                <small>{{vote.issue}}</small>
             </h1>
         </div>
         <form class="form-horizontal" >
             <div class="form-group">
                 <div class="col-sm-12">
-                    <textarea class="form-control" type="text" class="form-control" name="description" ng-model="comment" id="comment" placeholder="Comment..." rows="4"></textarea>
+                    <textarea class="form-control" type="text" class="form-control" name="description" ng-model="proposal" id="comment" placeholder="Proposal details..." rows="4"></textarea>
                 </div>
             </div>
             <div class="form-group">
@@ -20,9 +20,9 @@
         </form>
         <div>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="comment in issue.comments">
+                <li class="list-group-item" ng-repeat="proposal in vote.proposals">
                     <p>
-                        {{comment}}
+                        {{proposal}}
                     </p>
                 </li>
             </ul>

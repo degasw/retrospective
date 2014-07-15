@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('retrospectiveApp')
-    .controller('CommentsCtrl', function($scope, $location, IssueService){
+    .controller('CommentsCtrl', function($scope, $location, ProposalService){
         $scope.init = function(){
-          $scope.issue = IssueService.get();
+          $scope.vote = ProposalService.get();
         };
 
         var clearText = function(){
-            $scope.comment = "";
+            $scope.proposal = "";
         };
 
         var redirectToList = function(){
@@ -15,15 +15,15 @@ angular.module('retrospectiveApp')
         };
 
         $scope.add = function() {
-            $scope.issue.comments.push($scope.comment);
+            $scope.vote.proposals.push($scope.proposal);
             clearText();
         };
-
-        $scope.done = function () {
-            IssueService.set($scope.issue);
-            IssueService.update();
-            redirectToList();
-        };
+//
+//        $scope.done = function () {
+//            ProposalService.set($scope.vote);
+//            ProposalService.update();
+//            redirectToList();
+//        };
 
         $scope.cancel = function() {
             redirectToList();
