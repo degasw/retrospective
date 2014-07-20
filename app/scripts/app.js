@@ -20,9 +20,9 @@ angular.module('retrospectiveApp', [
                 templateUrl: 'partials/issues/list',
                 controller: 'IssuesCtrl'
             })
-            .when('/issues/comments', {
-                templateUrl: 'partials/issues/comment',
-                controller: 'CommentsCtrl'
+            .when('/issues/proposals', {
+                templateUrl: 'partials/issues/proposal',
+                controller: 'ProposalsCtrl'
             })
             .when('/reports', {
                 templateUrl: 'partials/reports/ranking',

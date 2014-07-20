@@ -1,5 +1,5 @@
 angular.module('retrospectiveApp')
-    .controller('ReportsCtrl', function ($scope, $http, $location, IssueService) {
+    .controller('ReportsCtrl', function ($scope, $http, $location, ProposalService) {
 
         $scope.init = function () {
             $http.get('/api/reports/ranking').success(function (data) {
@@ -10,8 +10,8 @@ angular.module('retrospectiveApp')
         };
 
         $scope.viewProposals = function (vote) {
-            IssueService.set(vote);
-            $location.url('/issues/comments');
+            ProposalService.setIssue(vote.issue);
+            $location.url('/issues/proposals');
         };
 
         $scope.cancel = function () {
