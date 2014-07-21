@@ -24,7 +24,7 @@ angular.module('retrospectiveApp')
 
         $scope.create = function () {
             $http.post('/api/issue', {issue: $scope.issue}).success(function (response) {
-                $location.url('/issues/list');
+                $location.url('/issues/new');
             }).error(function (err) {
                 console.log(err);
             });
