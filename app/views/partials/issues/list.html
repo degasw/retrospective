@@ -6,9 +6,9 @@
           </div>
           <table class="table table-bordered">
             <thead>
-              <th class="active">Description</th>
-              <th class="active">Category</th>
-              <th class="active">Importance</th>
+              <th class="active col-md-5" >Description</th>
+              <th class="active col-md-2">Category</th>
+              <th class="active col-md-1">Importance</th>
               <!--<th class="active">Action</th>-->
             </thead>
             <tbody ng-repeat="issue in issues">
@@ -29,8 +29,8 @@
           </table>
         </div>
         <hr />
-        <div class="btn-group" ng-show="issues.length > 0 && !voteSubmitted">
-            <button type="button" class="btn btn-primary" ng-click="submitVotes()">Submit Votes</button>
+        <div class="btn-group" >
+            <button type="button" class="btn btn-primary" ng-click="submitVotes()" ng-show="issues.length > 0 && !voteSubmitted && voteList.length > 0">Submit Votes</button>
             <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
         </div>
     </div>
