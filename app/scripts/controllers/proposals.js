@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('retrospectiveApp')
-    .controller('ProposalsCtrl', function($scope, $location, ProposalService){
+    .controller('ProposalsCtrl',['$scope', '$location', 'ProposalService', function($scope, $location, ProposalService){
         $scope.init = function(){
           $scope.vote = ProposalService.get();
         };
@@ -31,4 +31,4 @@ angular.module('retrospectiveApp')
 
         $scope.init();
 
-    });
+    }]);

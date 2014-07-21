@@ -43,12 +43,4 @@ angular.module('retrospectiveApp')
             $location.url('/issues/confirm');
         };
 
-        $scope.comment = function (issue) {
-            IssueService.set(issue);
-            $location.url('/issues/comments');
-        };
-
-        $scope.commentCount = function (issue) {
-           return issue.comments.length;
-        };
     });
