@@ -19,13 +19,20 @@
             <hr>
         </form>
         <div>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="proposal in vote.proposals">
-                    <p>
-                        {{proposal}}
-                    </p>
-                </li>
-            </ul>
+            <table class="table table-bordered">
+                <thead>
+                    <th class="active">Proposal description</th>
+                </thead>
+                <tbody ng-repeat="proposal in vote.proposals">
+                <tr>
+                    <td>
+                        <p>
+                            {{proposal}}
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-primary" ng-click="done()">Done</button>
